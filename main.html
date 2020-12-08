@@ -1,0 +1,24 @@
+
+<body>
+    <video  id="vid1" width="640" height="360"  autoplay>
+
+        <source src="videos/output.webm"
+                type="video/webm">
+    
+    
+        Sorry, your browser doesn't support embedded videos.
+    </video>
+    
+</body>
+<script>
+    var start = new Date();
+    var now = new Date("2020-11-30, 23:28:0");
+    var res = Math.abs(now - start) / 1000;
+    var minutes = Math.floor(res / 60) % 60;
+    var seconds = Math.floor(res ) % 60;
+    console.log( minutes + " minutes " + seconds + " seconds");
+    document.getElementById("vid1").addEventListener("loadedmetadata", function() {
+        this.currentTime = minutes * 60 + seconds;
+        this.play();
+}, false);
+</script> 
