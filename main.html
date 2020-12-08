@@ -2,7 +2,7 @@
 <body>
     <video  id="vid1" width="640" height="360"  autoplay>
 
-        <source src="videos/output.webm"
+        <source src="videos/abuelo.webm"
                 type="video/webm">
     
     
@@ -12,11 +12,15 @@
 </body>
 <script>
     var start = new Date();
-    var now = new Date("2020-11-30, 23:28:0");
+    var now = new Date();
+    now.setUTCFullYear(2020, 11, 08)
+    now.setUTCHours(18, 30, 0, 0)
+
     var res = Math.abs(now - start) / 1000;
     var minutes = Math.floor(res / 60) % 60;
     var seconds = Math.floor(res ) % 60;
-    console.log( minutes + " minutes " + seconds + " seconds");
+
+
     document.getElementById("vid1").addEventListener("loadedmetadata", function() {
         this.currentTime = minutes * 60 + seconds;
         this.play();
